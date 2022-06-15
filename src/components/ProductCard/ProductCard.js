@@ -2,7 +2,7 @@ import { useContext } from "react";
 
 import { Footer, ProductCardContainer } from "./ProductCard.styles.js";
 
-import { CartContext } from "../../context/Cart";
+import { CartContext } from "../../context/CartContext";
 
 import Button, { buttonTypeClasses } from "../Button/Button";
 

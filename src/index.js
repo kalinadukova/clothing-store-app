@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import { UserProvider } from "./context/UserContext";
 import { CategoriesProvider } from "./context/CategoriesContext";
-import { CartProvider } from "./context/Cart";
+import { CartProvider } from "./context/CartContext";
 
 import "./index.scss";
 
