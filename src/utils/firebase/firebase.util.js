@@ -77,7 +77,7 @@ export const createUserDocumentFromAuth = async (
     return;
   }
 
-  const userDocRef = doc(db, "users", userAuth.uid);
+  const userDocRef = doc(db, "users", userAuth.uid); //pointer to that space where the data could live
 
   const userSnapshot = await getDoc(userDocRef);
 
@@ -97,7 +97,7 @@ export const createUserDocumentFromAuth = async (
     }
   }
 
-  return userDocRef;
+  return userSnapshot; //the data lives on the userSnapshot
 };
 
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
@@ -120,3 +120,17 @@ export const signOutUser = async () => await signOut(auth);
 
 export const onAuthStateChangedListener = (callback) =>
   onAuthStateChanged(auth, callback);
+
+//a promisified version of checking if our authState has changed i.e. if there is a userAuth that still exists
+export const getCurrentUser = () => {
+  return new Promise((resolve, reject) => {
+    const unsubscribe = onAuthStateChanged(
+      auth,
+      (userAuth) => {
+        unsubscribe();
+        resolve(userAuth);
+      },
+      reject
+    );
+  });
+};
