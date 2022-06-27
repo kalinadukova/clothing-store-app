@@ -1,8 +1,6 @@
 require("dotenv").config(); //require - older version of import
 
-const stripe = require("stripe")(
-  "sk_test_51LFCJVFBJ4qgjv4Q2oPExOEahU0QPPwGbi9JsE8wgvOtkCwKMVS0y2ZeFsreOfMEmTxNHoRSgZtfQhaqDsIeqflL00pbLFOJkv"
-);
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 exports.handler = async (event) => {
   console.log(JSON.parse(event.body));
