@@ -8,7 +8,15 @@ import { Footer, ProductCardContainer } from "./ProductCard.styles";
 
 import Button, { buttonTypeClasses } from "../Button/Button";
 
-const ProductCard = ({ product }) => {
+import { CategoryItem } from "../../store/categories/category.types";
+
+import { FC } from "react";
+
+type ProductsCardProps = {
+  product: CategoryItem;
+};
+
+const ProductCard: FC<ProductsCardProps> = ({ product }) => {
   const { name, price, imageUrl } = product;
   const cartItems = useSelector(selectCartItems);
   const dispatch = useDispatch();
