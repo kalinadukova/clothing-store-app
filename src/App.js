@@ -4,6 +4,8 @@ import { useEffect, lazy, Suspense } from "react";
 
 import { useDispatch } from "react-redux/es/exports";
 
+import { GlobalStyle } from "./global.styles";
+
 // import { setCurrentUser } from "./store/user/user.action";
 
 // import {
@@ -43,16 +45,19 @@ const App = () => {
   }, []);
 
   return (
-    <Suspense fallback={<Spinner />}>
-      <Routes>
-        <Route path="/" element={<Navigation />}>
-          <Route index element={<Home />} />
-          <Route path="shop/*" element={<Shop />} />
-          <Route path="auth" element={<Authentication />} />
-          <Route path="checkout" element={<Checkout />} />
-        </Route>
-      </Routes>
-    </Suspense>
+    <>
+      <GlobalStyle />
+      <Suspense fallback={<Spinner />}>
+        <Routes>
+          <Route path="/" element={<Navigation />}>
+            <Route index element={<Home />} />
+            <Route path="shop/*" element={<Shop />} />
+            <Route path="auth" element={<Authentication />} />
+            <Route path="checkout" element={<Checkout />} />
+          </Route>
+        </Routes>
+      </Suspense>
+    </>
   );
 };
 
