@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import FormInput from "../FormInput/FormInput";
 import Button from "../Button/Button";
 
-import { SignUpContainer } from "./SignUpForm.styles.js";
+import { SignUpContainer } from "./SignUpForm.styles";
 import { signUpStart } from "../../store/user/user.action";
 
 import { AuthError, AuthErrorCodes } from "firebase/auth";

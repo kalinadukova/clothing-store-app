@@ -8,7 +8,7 @@ import {
 import CheckoutItem from "../../components/CheckoutItem/CheckoutItem";
 import PaymentForm from "../../components/PaymentForm/PaymentForm";
 
-import { CheckoutContainer, CheckoutHeader } from "./Checkout.styles.js";
+import { CheckoutContainer, CheckoutHeader } from "./Checkout.styles";
 
 const Checkout = () => {
   const cartItems = useSelector(selectCartItems);

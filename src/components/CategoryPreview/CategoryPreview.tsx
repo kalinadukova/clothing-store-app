@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { CategoryPreviewContainer } from "./CategoryPreview.styles.js";
+import { CategoryPreviewContainer } from "./CategoryPreview.styles";
 
 import ProductCard from "../ProductCard/ProductCard";
 

@@ -4,7 +4,7 @@ import {
   BaseButton,
   GoogleSignInButton,
   InvertedButton,
-} from "../Button/Button.styles.js";
+} from "../Button/Button.styles";
 
 export const CartDropdownContainer = styled.div`
   position: absolute;

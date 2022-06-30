@@ -10,7 +10,7 @@ import {
   selectCategoriesIsLoading,
 } from "../../store/categories/category.selector";
 
-import { CategoryContainer, CategoryTitle } from "./Category.styles.js";
+import { CategoryContainer, CategoryTitle } from "./Category.styles";
 
 type CategoryRouteParams = {
   category: string;
